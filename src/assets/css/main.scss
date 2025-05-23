@@ -1,0 +1,82 @@
+/* 基础样式 */
+html,
+body,
+#app {
+  position: relative;
+  width: 100%;
+}
+
+body {
+  font-family:
+    Inter,
+    -apple-system,
+    BlinkMacSystemFont,
+    Roboto,
+    Oxygen,
+    Ubuntu,
+    Microsoft YaHei,
+    'Droid Sans',
+    'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -webkit-tap-highlight-color: transparent;
+  font-size: 14px;
+}
+
+#app {
+  height: 100vh;
+  // background-color: var(--bg-color);
+}
+
+/* CSS变量 */
+:root {
+  --bg-color: #eee;
+  --aside-width: 200px;
+  --aside-width-collapse: 64px;
+  --header-height: 60px;
+  --tabs-height: 34px;
+}
+
+/* 原子类 */
+.h-screen {
+  height: 100vh;
+}
+
+/* 动画 */
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.5s ease;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
+
+/* element-plus 样式 */
+.el-menu {
+  border-right: none !important;
+}
+
+/* 滚动条 */
+::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+::-webkit-scrollbar-button {
+  display: none;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 2px;
+  background: rgba(144, 147, 153, 0.3);
+  cursor: pointer;
+}
+
+::-webkit-scrollbar-corner {
+  display: none;
+}
+
+::-webkit-resizer {
+  display: none;
+}

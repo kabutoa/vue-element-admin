@@ -1,0 +1,23 @@
+{
+  "name": "vue-element-admin-mock",
+  "version": "0.0.1",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "nodemon --config nodemon.json"
+  },
+  "dependencies": {
+    "@koa/cors": "^5.0.0",
+    "@koa/router": "^13.1.0",
+    "koa": "^3.0.0",
+    "koa-bodyparser": "^4.4.1",
+    "mockjs": "^1.1.0"
+  },
+  "devDependencies": {
+    "@types/koa": "^2.15.0",
+    "@types/koa-bodyparser": "^4.3.12",
+    "@types/mockjs": "^1.0.10",
+    "nodemon": "^3.1.10",
+    "tsx": "^4.19.4"
+  }
+}
