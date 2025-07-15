@@ -7,14 +7,14 @@ const router = useRouter()
 const authStore = useAuthStore()
 
 const formRef = ref<FormInstance>()
-const form = reactive<Auth.TLoginParams>({
+const form = ref<Auth.TLoginParams>({
   username: 'admin',
   password: '123456',
 })
 
 const loading = ref(false)
 
-const rules = reactive<FormRules<Auth.TLoginParams>>({
+const rules = ref<FormRules<Auth.TLoginParams>>({
   username: [
     { required: true, message: '请输入用户名', trigger: 'blur' },
     { min: 3, max: 12, message: '用户名长度应为3到5位', trigger: 'blur' },
@@ -33,8 +33,8 @@ const onLogin = async () => {
   try {
     loading.value = true
     await authStore.login({
-      username: form.username,
-      password: form.password,
+      username: form.value.username,
+      password: form.value.password,
     })
     ElNotification.success('登录成功')
     await router.replace({
