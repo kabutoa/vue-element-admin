@@ -2,6 +2,7 @@
 import { type FormInstance, type FormRules } from 'element-plus'
 import { User, Lock } from '@element-plus/icons-vue'
 import { useAuthStore } from '@/stores'
+import md5 from 'md5'
 
 const router = useRouter()
 const authStore = useAuthStore()
@@ -34,7 +35,7 @@ const onLogin = async () => {
     loading.value = true
     await authStore.login({
       username: form.value.username,
-      password: form.value.password,
+      password: md5(form.value.password),
     })
     ElNotification.success('登录成功')
     await router.replace({
