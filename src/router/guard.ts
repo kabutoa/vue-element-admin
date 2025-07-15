@@ -3,6 +3,8 @@ import type { Router } from 'vue-router'
 import { useAuthStore } from '@/stores'
 export const loginPath = '/login'
 
+export const whiteList = [loginPath]
+
 export const setupGuard = (router: Router) => {
   router.beforeEach(async (to, from, next) => {
     window.NProgress.start()
@@ -22,8 +24,8 @@ export const setupGuard = (router: Router) => {
         }
       }
     } else {
-      // 如果访问的是登录页，则直接放行
-      if (to.path === loginPath) {
+      // 如果是白名单，则直接放行
+      if (whiteList.includes(to.path)) {
         next()
       } else {
         // 否则跳转至登录页，并携带当前路径
