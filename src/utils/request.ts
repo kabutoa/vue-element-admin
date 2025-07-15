@@ -36,7 +36,6 @@ const createRequest = (config?: AxiosRequestConfig): AxiosInstance => {
       return config
     },
     (error) => {
-      window.NProgress.done()
       return Promise.reject(error)
     },
   )
@@ -58,8 +57,9 @@ const createRequest = (config?: AxiosRequestConfig): AxiosInstance => {
       // error handle
       if (error.message.indexOf('timeout') != -1) {
         ElNotification.error('Request Timeout')
+      } else {
+        ElNotification.error(error.message)
       }
-
       return Promise.reject(error)
     },
   )
