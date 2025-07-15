@@ -1,4 +1,4 @@
-import { fileURLToPath } from 'url'
+import { fileURLToPath, pathToFileURL } from 'url'
 import { readdir } from 'fs/promises'
 import path, { dirname } from 'path'
 import { IMockData } from '../types'
@@ -30,7 +30,7 @@ export const getMocks = async (dir = path.resolve(__dirname, '../services')) => 
   const files = await Promise.all(
     entries.map((entry) => {
       const res = path.resolve(dir, entry.name)
-      return entry.isDirectory() ? getMocks(res) : import(res)
+      return entry.isDirectory() ? getMocks(res) : import(pathToFileURL(res).href)
     }),
   )
   return files.flat()
