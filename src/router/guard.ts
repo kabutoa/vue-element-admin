@@ -18,6 +18,8 @@ export const setupGuard = (router: Router) => {
         // 从后端获取路由信息
         if (!authStore.menus?.length) {
           await authStore.getUserInfo()
+          // 使用nextTick确保动态路由注册完成且Vue更新完成后再跳转
+          await nextTick()
           next({ path: to.path, query: to.query })
         } else {
           next()

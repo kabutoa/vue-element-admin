@@ -7,13 +7,10 @@ export default {
       code: 200,
       message: '请求成功',
       data: {
-        userInfo: {
-          userId: 2,
-          userName: 'Susan',
-          nickName: '苏珊',
-          avatar: 'https://wpimg.wallstcn.com/f778738c-e4f8-4870-b634-56703b4acafe.gif',
-        },
-        buttons: [],
+        userId: 2,
+        userName: 'Susan',
+        nickName: '苏珊',
+        avatar: 'https://wpimg.wallstcn.com/f778738c-e4f8-4870-b634-56703b4acafe.gif',
         menus: [
           {
             path: '/dashboard',

@@ -1,5 +1,4 @@
 import request from '@/utils/request'
-import type { RouteRecordRaw } from 'vue-router'
 
 export const login = (data: Auth.TLoginParams): Promise<Auth.TLoginData> => {
   return request({
@@ -9,10 +8,13 @@ export const login = (data: Auth.TLoginParams): Promise<Auth.TLoginData> => {
   })
 }
 
-export const getUserInfo = (): Promise<{
-  userInfo: Auth.TUserInfo
-  buttons: string[]
-  menus: RouteRecordRaw[]
-}> => {
+export const logout = (): Promise<void> => {
+  return request({
+    url: '/auth/logout',
+    method: 'post',
+  })
+}
+
+export const getUserInfo = (): Promise<Auth.TUserInfo> => {
   return request.get('/auth/userInfo')
 }

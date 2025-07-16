@@ -4,6 +4,8 @@ declare namespace Auth {
     userName: string
     nickName: string
     avatar: string
+    menus: RouteRecordRaw[]
+    buttons: string[]
   }
 
   type TLoginParams = {
