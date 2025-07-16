@@ -4,9 +4,9 @@ export default {
   url: '/auth/login',
   type: 'post',
   response: (ctx: Context) => {
-    const { username, password } = ctx.request.body as { username: string; password: string }
+    const { username } = ctx.request.body as { username: string; password: string }
     // 管理员
-    if (username === 'admin' && password === '123456') {
+    if (username === 'admin') {
       return {
         status: 'success',
         code: 200,
@@ -20,7 +20,7 @@ export default {
       }
     }
     // 普通用户
-    if (username === 'test' && password === '123456') {
+    if (username === 'test') {
       return {
         status: 'success',
         code: 200,
