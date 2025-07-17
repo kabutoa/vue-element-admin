@@ -1,5 +1,5 @@
 {
-  "watch": ["mock"],
+  "watch": ["./"],
   "ext": ".ts,.js",
   "exec": "tsx app.ts"
 }
